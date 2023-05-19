@@ -89,7 +89,13 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form role="form">
+                  <form role="form" id="form-login" action="/account/login" method="post">
+                    <input type="hidden" name="_token" value="{% csrf %}">
+
+                     {% if form.errors %}
+                       {{ form.errors | default_errors }}
+                     {% endif %}>
+                    
                     <div class="mb-3">
                       <input type="text" name="customer[email_or_phone]" id="CustomerEmail" autocomplete="email" autocorrect="off" autocapitalize="off" placeholder="{{ account_placeholder | t }}" required class="form-control form-control-lg">
                     </div>
