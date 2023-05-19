@@ -1,5 +1,5 @@
 const pages1 = document.getElementById('pages1');
-pages1.innerHTML = `{% if customer.orders.size != 0 %}
+pages1.innerHTML = `
  <div class="card">
   <div class="table-responsive">
     <table class="table align-items-center mb-0">
