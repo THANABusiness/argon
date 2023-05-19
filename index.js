@@ -3,13 +3,15 @@ pages1.innerHTML = `<div class="card">
   <div class="table-responsive">
     <table class="table align-items-center mb-0">
       <thead>
-        <tr>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
-          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
-          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Technology</th>
-          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
-          <th class="text-secondary opacity-7"></th>
-        </tr>
+      
+              <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}</th>
+                <th class="text-secondary opacity-7" id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+              </tr>
+         
       </thead>
       <tbody>
         <tr>
