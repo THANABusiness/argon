@@ -12,9 +12,10 @@ pages1.innerHTML = `{% if customer.orders.size != 0 %}
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}</th>
                 <th class="text-secondary opacity-7" id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
               </tr>
-         
+        
       </thead>
-           <tbody>
+       
+            <tbody>
               {% for order in customer.orders %}
                 <tr>
                   <td id="RowOrder" role="cell" headers="ColumnOrder" data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
@@ -38,143 +39,20 @@ pages1.innerHTML = `{% if customer.orders.size != 0 %}
                       {% endif %}
                     </td>
                     <td headers="RowOrder ColumnFulfillment" role="cell" data-label="{{ 'customer.orders.fulfillment_status' | t }}">
-                <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p class="text-xs font-weight-bold mb-0">Programator</p>
-            <p class="text-xs text-secondary mb-0">Developer</p>
-          </td>
-          <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm badge-secondary">Offline</span>
-          </td>
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
-          </td>
-          <td class="align-middle">
-            <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-              Edit
-            </a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="d-flex px-2 py-1">
-              <div>
-                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-4.jpg" class="avatar avatar-sm me-3">
-              </div>
-              <div class="d-flex flex-column justify-content-center">
-                <h6 class="mb-0 text-xs">Laurent Perrier</h6>
-                <p class="text-xs text-secondary mb-0">laurent@creative-tim.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p class="text-xs font-weight-bold mb-0">Executive</p>
-            <p class="text-xs text-secondary mb-0">Projects</p>
-          </td>
-          <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm badge-success">Online</span>
-          </td>
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
-          </td>
-          <td class="align-middle">
-            <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-              Edit
-            </a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="d-flex px-2 py-1">
-              <div>
-                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-3.jpg" class="avatar avatar-sm me-3">
-              </div>
-              <div class="d-flex flex-column justify-content-center">
-                <h6 class="mb-0 text-xs">Michael Levi</h6>
-                <p class="text-xs text-secondary mb-0">michael@creative-tim.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p class="text-xs font-weight-bold mb-0">Programator</p>
-            <p class="text-xs text-secondary mb-0">Developer</p>
-          </td>
-          <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm badge-success">Online</span>
-          </td>
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
-          </td>
-          <td class="align-middle">
-            <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-              Edit
-            </a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="d-flex px-2 py-1">
-              <div>
-                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-2.jpg" class="avatar avatar-sm me-3">
-              </div>
-              <div class="d-flex flex-column justify-content-center">
-                <h6 class="mb-0 text-xs">Richard Gran</h6>
-                <p class="text-xs text-secondary mb-0">richard@creative-tim.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p class="text-xs font-weight-bold mb-0">Manager</p>
-            <p class="text-xs text-secondary mb-0">Executive</p>
-          </td>
-          <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm badge-secondary">Offline</span>
-          </td>
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
-          </td>
-          <td class="align-middle">
-            <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-              Edit
-            </a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="d-flex px-2 py-1">
-              <div>
-                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-4.jpg" class="avatar avatar-sm me-3">
-              </div>
-              <div class="d-flex flex-column justify-content-center">
-                <h6 class="mb-0 text-xs">Miriam Eric</h6>
-                <p class="text-xs text-secondary mb-0">miriam@creative-tim.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p class="text-xs font-weight-bold mb-0">Programtor</p>
-            <p class="text-xs text-secondary mb-0">Developer</p>
-          </td>
-          <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm badge-secondary">Offline</span>
-          </td>
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
-          </td>
-          <td class="align-middle">
-            <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-              Edit
-            </a>
-          </td>
-        </tr>
-      </tbody>
+                      {% if order.fulfillment_status == "fulfilled" %}
+                        <span class="label-tag ">{{ 'customer.fulfillment_status.fulfilled' | t }}</span>
+                      {% elsif order.fulfillment_status == "partially_fulfilled" %}
+                        <span class="label-tag label-tag-warning">{{ 'customer.fulfillment_status.partially_fulfilled' | t }}</span>
+                      {% else %}
+                        <span class="label-tag label-tag-warning">{{ 'customer.fulfillment_status.unfulfilled' | t }}</span>
+                      {% endif %}
+                    </td>
+                  {% endif %}
+                  <td  headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">{{order.currency}} {{ order.total_price }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>  
+             
     </table>
   </div>
 </div>`;
