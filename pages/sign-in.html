@@ -94,7 +94,7 @@
 
                      {% if form.errors %}
                        {{ form.errors | default_errors }}
-                     {% endif %}>
+                     {% endif %}
                     
                     <div class="mb-3">
                       <input type="text" name="customer[email_or_phone]" id="CustomerEmail" autocomplete="email" autocorrect="off" autocapitalize="off" placeholder="{{ account_placeholder | t }}" required class="form-control form-control-lg">
