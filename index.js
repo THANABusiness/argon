@@ -1,5 +1,6 @@
 const pages1 = document.getElementById('pages1');
-pages1.innerHTML = `<div class="card">
+pages1.innerHTML = `{% if customer.orders.size != 0 %}
+ <div class="card">
   <div class="table-responsive">
     <table class="table align-items-center mb-0">
       <thead>
@@ -13,44 +14,30 @@ pages1.innerHTML = `<div class="card">
               </tr>
          
       </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="d-flex px-2 py-1">
-              <div>
-                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-2.jpg" class="avatar avatar-sm me-3">
-              </div>
-              <div class="d-flex flex-column justify-content-center">
-                <h6 class="mb-0 text-xs">John Michael</h6>
-                <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p class="text-xs font-weight-bold mb-0">Manager</p>
-            <p class="text-xs text-secondary mb-0">Organization</p>
-          </td>
-          <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm badge-success">Online</span>
-          </td>
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-          </td>
-          <td class="align-middle">
-            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-              Edit
-            </a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="d-flex px-2 py-1">
-              <div>
-                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-3.jpg" class="avatar avatar-sm me-3">
-              </div>
-              <div class="d-flex flex-column justify-content-center">
-                <h6 class="mb-0 text-xs">Alexa Liras</h6>
+           <tbody>
+              {% for order in customer.orders %}
+                <tr>
+                  <td id="RowOrder" role="cell" headers="ColumnOrder" data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                  <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | date: "%b %d, %Y" }}</td>
+                  {% if order.is_cancelled == 1%}
+                    <td colspan="2"> <span class="label-tag label-tag-alert">{{ "customer.fulfillment_activity.cancelled" | t }}</span></td>
+                  {% else %}
+                    <td headers="RowOrder ColumnPayment" role="cell" data-label="{{ 'customer.orders.payment_status' | t }}">
+                      {% if order.financial_status == "paid" %}
+                        <span class="label-tag ">{{ 'customer.financial_status.paid' | t }}</span>
+                      {% elsif order.financial_status == "refund" %}
+                        <span class="label-tag ">{{ 'customer.financial_status.refund' | t }}</span>
+                      {% elsif order.financial_status == "pending" %}
+                        <span class="label-tag label-tag-warning">{{ 'customer.financial_status.pending' | t }}</span>
+                      {% elsif order.financial_status == "partially_paid" %}
+                        <span class="label-tag label-tag-warning">{{ 'customer.financial_status.partially_paid' | t }}</span>
+                      {% elsif order.financial_status == "authorized" %}
+                        <span class="label-tag label-tag-warning">{{ 'customer.financial_status.authorized' | t }}</span>
+                      {% else %}
+                        <span class="label-tag label-tag-warning">{{ 'customer.financial_status.unpaid' | t }}</span>
+                      {% endif %}
+                    </td>
+                    <td headers="RowOrder ColumnFulfillment" role="cell" data-label="{{ 'customer.orders.fulfillment_status' | t }}">
                 <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p>
               </div>
             </div>
