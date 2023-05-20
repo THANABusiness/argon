@@ -1,4 +1,4 @@
-const profile = doucment.getElementById('profile');
+const profile = document.getElementById('profile');
 profile.innerHTML = `<html>
   <head>
     <meta charset="utf-8">
