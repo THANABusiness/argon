@@ -1,2 +1,1 @@
-const profile = document.getElementById('profile');
-profile.innerHTML = `{{ 'customer.account.title' | t }}`;
+document.getElementById('profile').innerHTML = `<h1>{{ 'customer.account.title' | t }}</h1>`;
