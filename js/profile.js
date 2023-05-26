@@ -1,1 +1,1 @@
-document.getElementById('profile').innerHTML = `<h1>{{ 'customer.account.title' | t }}</h1>`;
+document.getElementById('profile').innerHTML = `<p id="accountName">AN</p>`;
